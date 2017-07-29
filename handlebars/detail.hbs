@@ -1,0 +1,29 @@
+<div data-id="{{id}}">
+  <a class="switch prev" href="/menu/{{prevID id}}"></a>
+  <figure>
+    <img src="/images/{{image}}" alt="selected-item">
+  </figure>
+  <article>
+    <a class="close" href="/">+</a>
+    <h1>{{name}}</h1>
+    <p>{{description}}</p>
+    <footer>
+      <h2>${{format_price price}}</h2>
+      <a class="add_cart" href="#">Add to cart</a>
+    </footer>
+  </article>
+  <aside>
+    <h3>Nutritional Information</h3>
+    <table>
+      <tbody>
+        {{#each nutrition}}
+          <tr>
+            <td>{{capitalize @key}}</td>
+            <td>{{this}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </aside>
+  <a class="switch next" href="/menu/{{nextID id}}"></a>
+</div>

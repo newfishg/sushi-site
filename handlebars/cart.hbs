@@ -1,0 +1,21 @@
+<ul>
+  {{#each dishes}}
+  <li data-id="{{id}}">
+    <a class="destroy" href="#">
+      <figure>
+        <img src="/images/{{image}}" alt="cart-item">
+      </figure>
+    </a>
+    <p>{{quantity}} x ${{format_price price}}</p>
+  </li>
+  {{/each}}
+</ul>
+<section>
+  <h3>Your<br>shopping cart</h3>
+  <p class="total">${{format_price total}}</p>
+  <p></p>
+  <footer>
+    <a class="left empty-cart" href="#">Empty cart</a><!--
+    --><a class="right checkout" href="/checkout">Checkout</a>
+  </footer>
+</section>

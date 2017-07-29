@@ -1,0 +1,19 @@
+include /_mixins
+
+doctype html
+html
+  head
+    title Sushi site
+    +stylesheet_link_tag('application')
+    +javascript_include_tag('vendor/all')
+    +javascript_include_tag('handlebars_templates')
+  body
+    block content
+      
+    +javascript_include_tag('application')
+    +javascript_include_tag('models/dish')
+    +javascript_include_tag('collections/dishes', 'collections/cart-item')
+    +javascript_include_tag('views/index', 'views/dish', 'views/dishes', 'views/detail', 'views/cart', 'views/checkout')
+    script(type="text/javascript").
+      App.init(!{JSON.stringify(dishes)});
+    +javascript_include_tag('router')
